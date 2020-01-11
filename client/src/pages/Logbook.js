@@ -79,19 +79,16 @@ class Logbook extends Component {
             <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
             <br></br>
             <br></br>
-            <a href="/logbook" class="btn btn-secondary btn-block font-weight-bold active" role="button">Logbook</a>
-            <br></br>
-            <br></br>
-            <a href="/warranty" class="btn btn-secondary btn-block font-weight-bold" role="button">Warranty</a>
+            <a href="/repair" class="btn btn-secondary btn-block font-weight-bold" role="button">Repair/Diagnostic</a>
             <br></br>
             <br></br>
             <a href="/tsb" class="btn btn-secondary btn-block font-weight-bold" role="button">TSB</a>
             <br></br>
             <br></br>
-            <a href="/diagnostic" class="btn btn-secondary btn-block font-weight-bold" role="button">Diagnostic</a>
+            <a href="/logbook" class="btn btn-secondary btn-block font-weight-bold active" role="button">Logbook</a>
             <br></br>
             <br></br>
-            <a href="/repair" class="btn btn-secondary btn-block font-weight-bold" role="button">Repair</a>
+            <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a>            
            </div> 
           </Col>
           <Col size="md-5">
