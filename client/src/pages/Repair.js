@@ -9,7 +9,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import EditBtn from "../components/EditBtn";
 
 
-class Repair extends Component {
+class RepairDiagnostic extends Component {
 
  
     render() {
@@ -18,27 +18,24 @@ class Repair extends Component {
           <Row>
           <Col size="md-2">
             <div className="sidebarMenu">
-              <br></br>
-              <br></br> 
-              <a href="/" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
-              <br></br>
-              <br></br>  
-              <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
-              <br></br>
-              <br></br>
-              <a href="/logbook" class="btn btn-secondary btn-block font-weight-bold " role="button">Logbook</a>
-              <br></br>
-              <br></br>
-              <a href="/warranty" class="btn btn-secondary btn-block font-weight-bold" role="button">Warranty</a>
-              <br></br>
-              <br></br>
-              <a href="/tsb" class="btn btn-secondary btn-block font-weight-bold" role="button">TSB</a>
-              <br></br>
-              <br></br>
-              <a href="/diagnostic" class="btn btn-secondary btn-block font-weight-bold" role="button">Diagnostic</a>
-              <br></br>
-              <br></br>
-              <a href="/repair" class="btn btn-secondary btn-block font-weight-bold active" role="button">Repair</a>
+            <br></br>
+            <br></br> 
+            <a href="/" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
+            <br></br>
+            <br></br>  
+            <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
+            <br></br>
+            <br></br>
+            <a href="/repair" class="btn btn-secondary btn-block font-weight-bold active" role="button">Repair/Diagnostic</a>
+            <br></br>
+            <br></br>
+            <a href="/tsb" class="btn btn-secondary btn-block font-weight-bold" role="button">TSB</a>
+            <br></br>
+            <br></br>
+            <a href="/logbook" class="btn btn-secondary btn-block font-weight-bold" role="button">Logbook</a>
+            <br></br>
+            <br></br>
+            <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a> 
              </div> 
             </Col>
           </Row>
@@ -47,4 +44,4 @@ class Repair extends Component {
     }
   }
   
-  export default Repair;
+  export default RepairDiagnostic;
