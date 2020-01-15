@@ -39,9 +39,9 @@ class Detail extends Component {
           <Col size="md-10">
           <div  >
             <article >
-              <h1 class="mx-auto">Details</h1>
+              <h1 class="mx-auto text-light">Details</h1>
               <hr></hr>
-              <p>
+              <p class="text-light">
                 {this.state.log.details}            
               </p>
               

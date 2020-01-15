@@ -141,7 +141,6 @@ class Logbook extends Component {
                       Date: {log.date}
                       </strong>
                     </Link>
-                    <EditBtn onClick={() => this.putLog(log._id)} />
                     <DeleteBtn onClick={() => this.deleteLog(log._id)} />
                   </ListItem>
                 ))}
