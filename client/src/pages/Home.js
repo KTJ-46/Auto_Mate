@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import EditBtn from "../components/EditBtn";
-
+import Slider from "../components/Slider";
 
 
 class Home extends Component {
@@ -39,7 +39,9 @@ class Home extends Component {
             <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a>  
              </div> 
             </Col>
-            
+            <Col size="md-10">
+              <Slider/>
+            </Col>
           </Row>
         </Container>
       );
