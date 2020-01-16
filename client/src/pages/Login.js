@@ -1,4 +1,4 @@
-import { React, Component } from "react";
+import React, {Component } from "react";
 // import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { Button} from "react-bootstrap";
 //import { Button, Input } from "antd";
