@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import '../App.css';
+
 
 class Detail extends Component {
   state = {
@@ -23,12 +23,14 @@ class Detail extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>
+              <h1 style={{marginTop: -40}}>
+              Customer:  {this.state.log.customer}
+              <br></br>
               Ticket #:  {this.state.log.ticket}
               <br></br>
-              Hours: {this.state.log.hours}
-              <br></br>
               Vin: {this.state.log.vin}
+              <br></br>
+              Hours: {this.state.log.hours}             
               <br></br>
               Date: {this.state.log.date}
               </h1>
@@ -36,17 +38,16 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10">
+          <Col size="md-10 md-offset-2">
           <div  >
             <article >
               <br></br>
+              <br></br>
               <h1 class="mx-auto text-light">Details</h1>
-              <hr></hr>
-              
-              <p class="text-light">
+              <hr></hr>              
+              <p class="text-light md-offset-2">
                 {this.state.log.details}            
-              </p>
-              
+              </p>             
             </article>
           </div>
           </Col>
@@ -54,6 +55,8 @@ class Detail extends Component {
         <Row>
           <Col size="md-2">
           <a href="/logbook" class="btn btn-info btn-block font-weight-bold" role="button">Back to Logbook</a>
+          <br></br>
+          <br></br>
           </Col>
         </Row>
       </Container>
