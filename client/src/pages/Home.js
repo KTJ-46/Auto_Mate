@@ -21,7 +21,7 @@ class Home extends Component {
             <div className="sidebarMenu">
             <br></br>
             <br></br> 
-            <a href="/" class="btn btn-secondary btn-block font-weight-bold active" role="button">Home</a>
+            <a href="/home" class="btn btn-secondary btn-block font-weight-bold active" role="button">Home</a>
             <br></br>
             <br></br>  
             <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>

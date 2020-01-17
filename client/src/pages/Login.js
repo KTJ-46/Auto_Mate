@@ -1,17 +1,8 @@
 import React, {Component } from "react";
-// import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import { Button} from "react-bootstrap";
-//import { Button, Input } from "antd";
-import Home from "./Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
+import { Button, Form} from "react-bootstrap";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { TextArea, FormBtn } from "../components/Form";
-import EditBtn from "../components/EditBtn";
+import users from "../data/users";
+
 
 class Login extends Component {
   state = {
@@ -19,63 +10,57 @@ class Login extends Component {
     password: ""
   };
 
-  onChange = e => {
+onChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+      [e.target.type]: e.target.value
+    });  
+};
 
-  onSubmit = async () => {
-    console.log(this.state.email);
-    console.log(this.state.password);
-    if (this.state.email === "ktj") {
-      console.log("inside");
+  handleSubmit = async (e) => {
+
+    e.preventDefault();
+    // iterate through array
+    // see if email is among the list
+        // see if password matches email object
+    const exists = users.find(user=> {
+        return user.email.toLowerCase() === this.state.email.toLowerCase() && user.password === this.state.password;
+    })
+   
+    if (exists) {
+      localStorage.setItem("token","isLoggedIn");
       window.location = "/Home"; // Redirecting to other page.
       return false;
-    }
-  };
+        }
 
-  //   onSubmit = async () => {
-  //     const response = await this.props.mutate({
-  //       variables: this.state
-  //     });
-  //     const { token, refreshToken } = response.data.login;
-  //     localStorage.setItem("token", token);
-  //     localStorage.setItem("refreshToken", refreshToken);
-  //   };
+
+    };
 
   render() {
     return (
       <Container fluid>
-        <Row>
-          <Col size="md-2">
-            <div className="sidebarMenu">
-              <br></br>
-              <br></br>
-                <h1> Hello World</h1>
-{/*               <Input
-                name="email"
-                placeholder="Email"
-                onChange={e => this.onChange(e)}
-                value={this.state.email}
-              />
-              <Input
-                name="password"
-                placeholder="Password"
-                type="password"
-                onChange={e => this.onChange(e)}
-                value={this.state.password}
-              /> */}
-              <br />
-              <br></br>
-              <br></br>
-                <button> Click Me </button>
-              <Button >
-                Login
-              </Button>
-            </div>
-          </Col>
-        </Row>
+       
+        <Form onSubmit={this.handleSubmit}>
+        <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" 
+            onChange={e => this.onChange(e)}
+            value={this.state.email}
+            />
+        
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" 
+            onChange={e => this.onChange(e)}
+            value={this.state.password}
+            />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+            Submit
+        </Button>
+        </Form>
       </Container>
     );
   }
