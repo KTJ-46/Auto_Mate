@@ -13,7 +13,7 @@ function Slider() {
       alt="First slide"
     />
       <Carousel.Caption>
-      <h1 style={{marginBottom: 280}}>Search the Web for any problem you come across</h1>
+      <h1 className="animated fadeIn delay-1s" style={{marginBottom: 280}}>Search the Web for any Problem you come across</h1>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -23,7 +23,7 @@ function Slider() {
       alt="Second slide"
     />
           <Carousel.Caption>
-      <h1 style={{marginBottom: 280}}>Enter DTC to get Repair/Diagnostic Information</h1>
+      <h1 className="animated fadeIn delay-1s" style={{marginBottom: 280}}>Enter DTC to get Repair/Diagnostic Information</h1>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -33,7 +33,7 @@ function Slider() {
       alt="Third slide"
     />
           <Carousel.Caption>
-      <h1 style={{marginBottom: 280}}>Technician Servive Bulleting are available</h1>
+      <h1 className="animated fadeIn delay-1s" style={{marginBottom: 280}}>Technician Service Bulletins are available</h1>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -43,7 +43,7 @@ function Slider() {
       alt="Fourth slide"
     />
           <Carousel.Caption>
-      <h1 style={{marginBottom: 280}}>Log your work and keep records for your customers</h1>
+      <h1 className="animated fadeIn delay-1s" style={{marginBottom: 280}}>Log your Work and keep Records for your Customers</h1>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -53,7 +53,7 @@ function Slider() {
       alt="Fifth slide"
     />
           <Carousel.Caption>
-      <h1 style={{marginBottom: 280}}>Retrieve Maintenance info on demand</h1>
+      <h1 class="animated fadeIn delay-1s" style={{marginBottom: 280}}>Retrieve Maintenance Info on Demand</h1>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
