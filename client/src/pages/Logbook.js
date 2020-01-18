@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link, Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
@@ -12,6 +11,7 @@ import EditBtn from "../components/EditBtn";
 class Logbook extends Component {
   state = {
     logs: [],
+    customer: "",
     ticket: "",
     hours: "",
     vin: "",
@@ -25,7 +25,7 @@ class Logbook extends Component {
   loadLogbook = () => {
     API.getLogbook()
       .then(res =>
-        this.setState({ logs: res.data, ticket: "", hours: "", vin: "", details: "" })
+        this.setState({ logs: res.data, customer: "", ticket: "", hours: "", vin: "", details: "" })
       )
       .catch(err => console.log(err));
   };
@@ -54,6 +54,7 @@ class Logbook extends Component {
     event.preventDefault();
     if (this.state.ticket && this.state.hours) {
       API.saveLog({
+        customer: this.state.customer,
         ticket: this.state.ticket,
         hours: this.state.hours,
         vin: this.state.vin,
@@ -76,7 +77,7 @@ class Logbook extends Component {
             <div className="sidebarMenu">
               <br></br>
               <br></br> 
-              <a href="/home" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
+              <a href="/" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
               <br></br>
               <br></br>  
               <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
@@ -92,10 +93,16 @@ class Logbook extends Component {
               <br></br>
               <br></br>
               <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a>            
-             </div> 
+            </div> 
             </Col>
             <Col size="md-5">
               <form style={{marginTop: 50}}>
+                <Input
+                  value={this.state.customer}
+                  onChange={this.handleInputChange}
+                  name="customer"
+                  placeholder="Customer (required)"
+                />
                 <Input
                   value={this.state.ticket}
                   onChange={this.handleInputChange}
@@ -103,16 +110,16 @@ class Logbook extends Component {
                   placeholder="Ticket # (required)"
                 />
                 <Input
+                  value={this.state.vin}
+                  onChange={this.handleInputChange}
+                  name="vin"
+                  placeholder="Vin # (required)"
+                />
+                <Input
                   value={this.state.hours}
                   onChange={this.handleInputChange}
                   name="hours"
                   placeholder="Hours (required)"
-                />
-                <Input
-                  value={this.state.vin}
-                  onChange={this.handleInputChange}
-                  name="vin"
-                  placeholder="Vin # (Optional)"
                 />
                 <TextArea
                   value={this.state.details}
@@ -121,7 +128,7 @@ class Logbook extends Component {
                   placeholder="Details (Optional)"
                 />
                 <FormBtn
-                  disabled={!(this.state.hours && this.state.ticket)}
+                  disabled={!(this.state.customer && this.state.ticket && this.state.vin && this.state.hours )}
                   onClick={this.handleFormSubmit}
                 >
                   Submit Log
@@ -135,9 +142,9 @@ class Logbook extends Component {
                     <ListItem key={log._id}>
                       <Link to={"/logs/" + log._id}>
                         <strong>
+                        Customer: {log.customer}
+                        <br></br>  
                         Ticket #: {log.ticket}
-                        <br></br>
-                        Hours: {log.hours}
                         <br></br>
                         Vin: {log.vin}
                         <br></br>
@@ -157,7 +164,6 @@ class Logbook extends Component {
         </Container>
       );
     }
-
   }
 }
 
