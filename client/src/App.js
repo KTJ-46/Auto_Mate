@@ -9,7 +9,7 @@ import Repair from "./pages/Repair";
 import Maintenance from "./pages/Maintenance";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import Login from "./pages/Login";
+import Login from "./components/Login";
 
 
 function App() {

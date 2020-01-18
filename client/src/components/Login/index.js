@@ -1,8 +1,8 @@
 import React, {Component } from "react";
 import { Button, Form} from "react-bootstrap";
-import { Col, Row, Container } from "../components/Grid";
-import users from "../data/users";
-
+import { Col, Row, Container } from "../Grid";
+import users from "../../data/users";
+import "./style.css";
 
 class Login extends Component {
   state = {
@@ -19,16 +19,14 @@ onChange = e => {
   handleSubmit = async (e) => {
 
     e.preventDefault();
-    // iterate through array
-    // see if email is among the list
-        // see if password matches email object
+    
     const exists = users.find(user=> {
         return user.email.toLowerCase() === this.state.email.toLowerCase() && user.password === this.state.password;
     })
    
     if (exists) {
       localStorage.setItem("token","isLoggedIn");
-      window.location = "/Home"; // Redirecting to other page.
+      window.location = "/Home"; 
       return false;
         }
 
