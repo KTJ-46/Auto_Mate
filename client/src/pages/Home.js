@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Slider from "../components/Slider";
 
@@ -7,6 +8,9 @@ class Home extends Component {
 
  
     render() {
+      if(!localStorage.getItem("token")) {
+        return <Redirect to="/"/>
+      } else {
       return (
         <Container fluid>
           <Row>
@@ -14,7 +18,7 @@ class Home extends Component {
             <div className="sidebarMenu">
             <br></br>
             <br></br> 
-            <a href="/" class="btn btn-secondary btn-block font-weight-bold active" role="button">Home</a>
+            <a href="/home" class="btn btn-secondary btn-block font-weight-bold active" role="button">Home</a>
             <br></br>
             <br></br>  
             <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
@@ -40,5 +44,6 @@ class Home extends Component {
       );
     }
   }
+}
   
   export default Home;

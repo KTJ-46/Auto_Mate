@@ -9,6 +9,7 @@ import Repair from "./pages/Repair";
 import Maintenance from "./pages/Maintenance";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Login from "./components/Login";
 import Footer from "./components/Footer";
 
 
@@ -18,7 +19,8 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Login} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/logbook" component={Logbook} />
           <Route exact path="/logs/:id" component={Detail} />

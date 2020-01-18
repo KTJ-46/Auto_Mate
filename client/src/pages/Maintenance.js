@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 
 
@@ -6,6 +7,9 @@ class Maintenance extends Component {
 
  
     render() {
+      if(!localStorage.getItem("token")) {
+        return <Redirect to="/"/>
+      } else {
       return (
         <Container fluid>
           <Row>
@@ -13,7 +17,7 @@ class Maintenance extends Component {
             <div className="sidebarMenu">
             <br></br>
             <br></br> 
-            <a href="/" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
+            <a href="/home" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
             <br></br>
             <br></br>  
             <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
@@ -36,5 +40,5 @@ class Maintenance extends Component {
       );
     }
   }
-  
+} 
   export default Maintenance;
