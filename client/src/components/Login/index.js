@@ -37,8 +37,8 @@ onChange = e => {
     return (
       <Container fluid>
         <Row>
-        <Col size="md-8 mx-auto">
-        <Form className="md-6" onSubmit={this.handleSubmit}>
+        <Col size="md-6 mx-auto">
+        <Form onSubmit={this.handleSubmit}>
             <br></br>
             <br></br>
         <Form.Group controlId="formBasicEmail">
@@ -62,6 +62,15 @@ onChange = e => {
             Submit
         </Button>
         </Form>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </Col>
         </Row>
       </Container>
