@@ -1,6 +1,20 @@
 import axios from "axios";
 
+
 export default {
+
+  // Get info. from  Car MD API
+  getCarMD: function(vin, mileage, dtc) {
+    return axios.get("http://api.carmd.com/v3.0/repair?vin=" + vin + "&mileage=" + mileage + "&dtc=" + dtc,
+      {headers: {
+        "content-type":"application/json",
+        "authorization":"Basic MTMwMWM0OTQtZGIwNS00NTBmLWI1ZTQtODA3OWU1NDY4NzM1	",
+        "partner-token":"4f8eec62e091477aa343d8eb26869044"
+        }
+      }
+    )
+  },
+  
   // Gets all books
   getLogbook: function() {
     return axios.get("/api/logs");
