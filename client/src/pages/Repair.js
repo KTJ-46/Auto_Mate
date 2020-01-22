@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import SearchDiagnostics from "../components/SearchDiagnostics";
+import DiagnosticsResult from "../components/DiagnosticsResult";
 
 
 class RepairDiagnostic extends Component {
@@ -31,42 +32,42 @@ class RepairDiagnostic extends Component {
           // once it clicks it connects to the google book api with the search value
           API.getCarMD(this.state.vin, this.state.mileage, this.state.dtc)
               .then(res => {
-                  if (res.data.items === "error") {
-                      throw new Error(res.data.items);
-                  }
-                  else {
+                  console.log('RAW RES=> ', res)
+                  // if (!Array.isArray(res)) {
+                  //   return 'results are not array'
+                  // }
+                  // else {
                       // store response in a array
-                      let results = res.data
+                      let results = res.data.data
                       //console log the results
-                      console.log(results);
+                      console.log('DATA from RESULT=> ', results);
                       //map through the array 
-                      results = results.map(result => {
+                      results = results.map((result, index) => {
                           //store data/information in a new object 
                           result = {
-                              key: result.id,
-                              id: result.id,
-                              desc: result.data.desc,
-                              repairHours: result.data.repair.hours,
-                              repairLaborRate: result.data.repair.labor_rate_per_hour,
-                              repairPartCost: result.data.repair.part_cost,
-                              repairLaborCost: result.data.repair.labor_cost,
-                              repairMiscCost: result.data.repair.misc_cost,
-                              repairTotalCost: result.data.repair.total_cost,
-                              reparTSB: result.data.tsb.file_url
+                              key: index,
+                              id: index,
+                              desc: result.desc,
+                              repairHours: result.repair.hours,
+                              repairLaborRate: result.repair.labor_rate_per_hour,
+                              repairPartCost: result.repair.part_cost,
+                              repairLaborCost: result.repair.labor_cost,
+                              repairMiscCost: result.repair.misc_cost,
+                              repairTotalCost: result.repair.total_cost,
+                              repairTSB: result.tsb.file_url
 
                             
                           }
                           return result;
                       })
                       // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
-                      this.setState({ books: results, error: "" })
-                  }
+                this.setState({ diagnosis: results, error: "" }, () => console.log('AFTER SETTING STATE',this.state.diagnosis))
               })
-              .catch(err => this.setState({ error: err.items }));
+              .catch(err => this.setState({ error: err }));
       }
   
     render() {
-      console.log(this.state)
+      console.log('REPAIR STATE on Render=>', this.state)
       if(!localStorage.getItem("token")) {
         return <Redirect to="/"/>
       } else {
@@ -112,9 +113,9 @@ class RepairDiagnostic extends Component {
                     </Row>
                 </Container>
                 <br></br>
-                {/* <Container>
-                    <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
-                </Container> */}
+                <Container>
+                    <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />
+                </Container>
             </Container>
             </Col>
             </Row>
