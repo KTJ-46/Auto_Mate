@@ -62,7 +62,7 @@ class Detail extends Component {
               Date: {this.state.log.date}
               </h1>
             </Jumbotron>
-          </Col>
+          </Col >
         </Row>
         <Row>
           <Col size="md-10 md-offset-2">
