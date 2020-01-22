@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import EditBtn from "../components/EditBtn";
+
 
 
 class Logbook extends Component {
@@ -29,13 +29,6 @@ class Logbook extends Component {
       )
       .catch(err => console.log(err));
   };
-
-  putLog = id => {
-    API.getLog(id)
-      .then(res => this.loadLogbook())
-      .catch(err => console.log(err));
-  };
-
 
   deleteLog = id => {
     API.deleteLog(id)
@@ -148,7 +141,6 @@ class Logbook extends Component {
                       Date: {log.date}
                       </strong>
                     </Link>
-                    <EditBtn onClick={() => this.putLog(log._id)} />
                     <DeleteBtn onClick={() => this.deleteLog(log._id)} />
                   </ListItem>
                 ))}

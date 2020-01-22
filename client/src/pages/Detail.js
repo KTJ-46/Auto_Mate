@@ -7,20 +7,47 @@ import '../App.css';
 
 class Detail extends Component {
   state = {
-    log: {}
+    log: {},
+    newDetails: '',
+    editing: false
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getLog(this.props.match.params.id)
+    console.log('OLDD=>', this.state.log);
+    if(!this.state.log.ticket) {
+      API.getLog(this.props.match.params.id)
       .then(res => this.setState({ log: res.data }))
       .catch(err => console.log(err));
+    }
   }
 
+  toggleEditing = () => {
+    this.setState({editing: !this.state.editing})
+  }
+
+  handleChange = (event) => {
+    const {value} = event.target;
+    console.log(value);
+    this.setState({newDetails:value})
+  }
+
+  postChanges = () => {
+    console.log('update Database')
+    // make ajax call, send obeject BUT w/ this.state.newDetails
+  }
+
+  putLog = id => {
+    API.getLog(id)
+      .then(res => this.loadLogbook())
+      .catch(err => console.log(err));
+  };
+
   render() {
+    console.log(this.state.log.details)
     return (
-      <Container fluid>
-        <Row>
+      <Container fluid className="DETAILS">
+        <Row className="DETAILS">
           <Col size="md-12">
             <Jumbotron>
               <h1 style={{marginTop: -40}}>
@@ -43,18 +70,29 @@ class Detail extends Component {
             <article >
               <br></br>
               <br></br>
-              <h1 class="mx-auto text-light">Details</h1>
+              <h1 className="mx-auto text-light">Details</h1>
               <hr></hr>              
-              <p class="text-light md-offset-2">
+              {!this.state.editing && <p class="text-light">
                 {this.state.log.details}            
-              </p>             
+              </p>}
+              {this.state.editing && 
+                <span>
+                  <textarea style={{height: 300}} className="col-12 text-body"
+                  value={this.state.newDetails || this.state.log.details}
+                  onChange={(event) => this.handleChange(event)} />
+                  <button className="btn btn-info btn-block font-weight-bold" onClick={this.postChanges}>Save</button>
+                  <br></br>
+                </span>
+                } 
+                <button className="btn btn-info btn-block font-weight-bold" onClick={this.toggleEditing}>Edit</button>            
             </article>
+            <br></br>
           </div>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-          <a href="/logbook" class="btn btn-info btn-block font-weight-bold" role="button">Back to Logbook</a>
+          <a href="/logbook" className="btn btn-info btn-block font-weight-bold" role="button">Back to Logbook</a>
           <br></br>
           <br></br>
           </Col>
