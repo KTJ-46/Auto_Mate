@@ -36,15 +36,15 @@ class Maintenance extends Component {
             <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold active" role="button">Maintenance</a> 
              </div> 
             </Col>
-          </Row>
+         
     
-        
-        <Jumbotron>
-          <Container>
-          <ContactUs/>
-          </Container>
-        
-    </Jumbotron>>
+          
+            <Col  size="md-10">
+            <Jumbotron >
+                <ContactUs/>
+            </Jumbotron>>
+            </Col>
+            </Row>
     </Container>
       );
     }
