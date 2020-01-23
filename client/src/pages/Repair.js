@@ -96,7 +96,7 @@ class RepairDiagnostic extends Component {
               <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a> 
               </div> 
               </Col>
-              <Col size="md-2">
+              <Col size="md-10">
               
           <Container fluid>
                 <Jumbotron>

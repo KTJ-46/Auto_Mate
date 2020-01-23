@@ -26,15 +26,29 @@ const DiagnosticsResult = props => {
                                         </Col>
                                         <Col size="1" className="emptyCol"/>
                                         {/* col-9 show information of the book */}
-                                        <Col size="9" className="bookInfo">
+                                        <Col size="9" className="Diagnosis">
+                                            
                                             <Row>
-                                                <h3 className="bookTitle">{diagnostic.repairHours}</h3>
+                                                <h3 className="diagDesc"> Diagnosis: {diagnostic.desc}</h3>
                                             </Row>
                                             <Row>
-                                                <h4 className="bookAuthor">"Cost{diagnostic.repairLaborRate}</h4>
+                                                <h3 className="diagRepairHour"> Repair Hours needed for the job: {diagnostic.repairHours}</h3>
+                                            </Row>
+                                           
+                                            <Row>
+                                                <h4 className="diagLaborRate">Hourly Labor Rate: ${diagnostic.repairLaborRate}</h4>
                                             </Row>
                                             <Row>
-                                                <p className="bookDescription">d{diagnostic.repairTotalCost}</p>
+                                                <h3 className="diagPartsCost"> Cost of the parts: ${diagnostic.repairPartCost}</h3>
+                                            </Row>
+                                            <Row>
+                                                <p className="diagMiscCost">Miscellaneous/ Hazmat: ${diagnostic.repairMiscCost}</p>
+                                            </Row>
+                                            <Row>
+                                                <p className="diagTotalCost">Total Cost of the job: ${diagnostic.repairTotalCost}</p>
+                                            </Row>
+                                            <Row>
+                                                <p className="diagTSB">Technician Service Bulletin: {diagnostic.repairTSB}</p>
                                             </Row>
                                         </Col>
                                     </Row>
