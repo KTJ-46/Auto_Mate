@@ -2,15 +2,11 @@
     margin-top: 0px;
     margin-left: -15px;
     background-color: #343a40;
-    height: 800px;
+    height: 1000px;
 }
 
 body {
     background-image: url(https://docs.google.com/uc?id=1exfsTzKVkavUiBL1VLF2bXRNT6Xf5FD6);
     background-repeat: no-repeat;
     background-color: black;
-}
-.btn btn-secondary btn-block font-weight-bold {
-
-
 }

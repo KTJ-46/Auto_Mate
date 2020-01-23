@@ -5,7 +5,7 @@ const SearchDiagnostics = props => {
     return (
         <form>
             <div className="form-group">
-                <label className="SearchDiagnosticsLabel"><h3>Search For Car Repair/Diagnostics</h3></label>
+                <label className="SearchDiagnosticsLabel text-light"><h3>Search For Car Repair/Diagnostics</h3></label>
                 <br></br>
                 <input className="col-12 form-control"
                     value={props.vin}
@@ -32,7 +32,7 @@ const SearchDiagnostics = props => {
                     onChange={(e) => props.handleInputChange(e)}
                 />
             </div>
-            <button type="submit" className="submitBtn btn btn-primary" onClick={props.handleFormSubmit}>
+            <button type="submit" className="btn btn-info btn-block font-weight-bold" onClick={props.handleFormSubmit}>
                 Submit
             </button>
         </form>
