@@ -97,6 +97,7 @@ class RepairDiagnostic extends Component {
               </div> 
               </Col>
               <Col size="md-10">
+
                 <Jumbotron>
                   <h1 style={{marginTop: 50}} className="text-light">Search for your car's diagnosis</h1>
                 </Jumbotron>                   

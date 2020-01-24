@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-
+import Jumbotron from "../components/Jumbotron";
+import ContactUs from "../components/ContactUs";
 
 class Maintenance extends Component {
 
@@ -36,7 +37,15 @@ class Maintenance extends Component {
              </div> 
             </Col>
           </Row>
-        </Container>
+    
+        
+        <Jumbotron>
+          <Container>
+          <ContactUs/>
+          </Container>
+        
+    </Jumbotron>>
+    </Container>
       );
     }
   }
