@@ -1,5 +1,6 @@
 import React from "react";
-import emailjs from '../../../node_modules/emailjs-com';
+import emailjs from "emailjs-com";
+
 import './style.css';
 
 
