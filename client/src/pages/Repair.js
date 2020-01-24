@@ -78,22 +78,16 @@ class RepairDiagnostic extends Component {
               <div className="sidebarMenu">
               <br></br>
               <br></br> 
-              <a href="/home" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
-              <br></br>
-              <br></br>  
-              <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
+              <a href="/home" className="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
               <br></br>
               <br></br>
-              <a href="/repair" class="btn btn-secondary btn-block font-weight-bold active" role="button">Repair/Diagnostic</a>
+              <a href="/repair" className="btn btn-secondary btn-block font-weight-bold active" role="button">Repair/Diagnostic</a>
               <br></br>
               <br></br>
-              <a href="/tsb" class="btn btn-secondary btn-block font-weight-bold" role="button">TSB</a>
+              <a href="/logbook" className="btn btn-secondary btn-block font-weight-bold" role="button">Logbook</a>
               <br></br>
               <br></br>
-              <a href="/logbook" class="btn btn-secondary btn-block font-weight-bold" role="button">Logbook</a>
-              <br></br>
-              <br></br>
-              <a href="/maintenance" class="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a> 
+              <a href="/maintenance" className="btn btn-secondary btn-block font-weight-bold" role="button">Maintenance</a> 
               </div> 
               </Col>
               <Col size="md-10">
@@ -111,12 +105,13 @@ class RepairDiagnostic extends Component {
                 <br></br>
               </Col>
                 <br></br>               
-                <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />          
+                <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />   
+               <Jumbotron >
+                <ContactUs/>
+            </Jumbotron>        
             </Col>
             <Col  size="md-2">
-            <Jumbotron >
-                <ContactUs/>
-            </Jumbotron>>
+            
             </Col>
             </Row>
           </Container>
