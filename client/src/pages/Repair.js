@@ -5,7 +5,7 @@ import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import SearchDiagnostics from "../components/SearchDiagnostics";
 import DiagnosticsResult from "../components/DiagnosticsResult";
-
+import ContactUs from "../components/ContactUs";
 
 class RepairDiagnostic extends Component {
   constructor() {
@@ -112,6 +112,11 @@ class RepairDiagnostic extends Component {
               </Col>
                 <br></br>               
                 <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />          
+            </Col>
+            <Col  size="md-2">
+            <Jumbotron >
+                <ContactUs/>
+            </Jumbotron>>
             </Col>
             </Row>
           </Container>
