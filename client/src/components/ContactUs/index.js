@@ -5,10 +5,15 @@ import './style.css';
 
 function ContactUs() {
 
+  var templateParams = {
+    name: 'James',
+    diagnostics: 'Check this out!'
+};
+
   function sendEmail(e) {
     e.preventDefault();
-
-    emailjs.sendForm('contact_service', 'contact_form', e.target, 'user_DoxoMt5Go2TzXNORV56Z5')
+  console.log(templateParams);
+    emailjs.sendForm('contact_service', 'contact_form', e.target, 'user_DoxoMt5Go2TzXNORV56Z5',templateParams )
       .then((result) => {
           console.log(result.text);
       }, (error) => {
