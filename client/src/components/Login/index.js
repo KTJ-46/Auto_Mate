@@ -36,29 +36,43 @@ onChange = e => {
   render() {
     return (
       <Container fluid>
-       
+        <Row>
+        <Col size="md-6 mx-auto">
         <Form onSubmit={this.handleSubmit}>
+            <br></br>
+            <br></br>
         <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className="text-light">Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" 
             onChange={e => this.onChange(e)}
             value={this.state.email}
             />
         
         </Form.Group>
-
+            <br></br>
         <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="text-light">Password</Form.Label>
             <Form.Control type="password" placeholder="Password" 
             onChange={e => this.onChange(e)}
             value={this.state.password}
             />
         </Form.Group>
-
-        <Button variant="primary" type="submit">
+            <br></br>
+        <Button className="btn btn-info btn-block font-weight-bold" variant="primary" type="submit">
             Submit
         </Button>
         </Form>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+        </Col>
+        </Row>
       </Container>
     );
   }

@@ -97,26 +97,21 @@ class RepairDiagnostic extends Component {
               </div> 
               </Col>
               <Col size="md-10">
-              
-          <Container fluid>
+
                 <Jumbotron>
-                    <h1 className="text-white">Search for your car's diagnosis</h1>
-                </Jumbotron>
-                <Container>
-                    <Row>
-                        <Col size="24">
-                            <SearchDiagnostics
-                                handleFormSubmit={this.handleFormSubmit}
-                                handleInputChange={this.handleInputChange}
-                            />
-                        </Col>
-                    </Row>
-                </Container>
+                  <h1 style={{marginTop: 50}} className="text-light">Search for your car's diagnosis</h1>
+                </Jumbotron>                   
+              <Col size="md-6">
+                  <br></br>
+                  <br></br>
+                <SearchDiagnostics
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleInputChange={this.handleInputChange}
+                />
                 <br></br>
-                <Container>
-                    <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />
-                </Container>
-            </Container>
+              </Col>
+                <br></br>               
+                <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />          
             </Col>
             </Row>
           </Container>
