@@ -107,7 +107,7 @@ class RepairDiagnostic extends Component {
                 <br></br>               
                 <DiagnosticsResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />   
                <Jumbotron >
-                <ContactUs/>
+                {this.state.diagnosis.length > 0 && <ContactUs diagnostics={this.state.diagnosis}/>}
             </Jumbotron>        
             </Col>
             <Col  size="md-2">
