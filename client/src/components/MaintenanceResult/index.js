@@ -3,7 +3,7 @@ import React from "react";
 import {Row, Col} from "../Grid"
 
 const MaintenanceResult = props => {
-    return (props.diagnostics.length === 0) ? (
+    return (props.maintenance.length === 0) ? (
         <div className="card">
             <div className="card-body player">
                 <div className="article">
@@ -16,7 +16,7 @@ const MaintenanceResult = props => {
                 <div className="card-body player">
                     <div className="article">
                         <h3>Scheduled Maintenance Results</h3>
-                        {props.diagnostics.map(diagnostic => {
+                        {props.maintenance.map(diagnostic => {
                             return (
                                 <li className="search-list list-group-item" key={diagnostic.id}>
                                     <Row className="SearchResult row" id={diagnostic.desc + "Card"}>
