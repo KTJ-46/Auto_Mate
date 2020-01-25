@@ -41,6 +41,7 @@ class MaintenanceInfo extends Component {
                       console.log('DATA from RESULT=> ', results);
                       //map through the array 
                       results = results.map((result, index) => {
+                        console.log(result);
                           //store data/information in a new object 
                           result = {
                               key: index,
@@ -59,7 +60,7 @@ class MaintenanceInfo extends Component {
                           return result;
                       })
                       // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
-                this.setState({ diagnosis: results, error: "" }, () => console.log('AFTER SETTING STATE',this.state.diagnosis))
+                this.setState({ maintenance: results, error: "" }, () => console.log('AFTER SETTING STATE',this.state.diagnosis))
               })
               .catch(err => this.setState({ error: err }));
       }
@@ -109,7 +110,7 @@ class MaintenanceInfo extends Component {
                 <br></br>
               </Col>
                 <br></br>               
-                <MaintenanceResult diagnostics={this.state.diagnosis} handleSavedButton={this.handleSavedButton} />          
+                <MaintenanceResult maintenance={this.state.maintenance} handleSavedButton={this.handleSavedButton} />          
             </Col>
       
             </Row>

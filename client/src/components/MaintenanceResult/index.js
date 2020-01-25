@@ -3,7 +3,7 @@ import React from "react";
 import {Row, Col} from "../Grid"
 
 const MaintenanceResult = props => {
-    return (props.maintenance.length === 0) ? (
+    return (props.maintenance.length <= 0) ? (
         <div className="card">
             <div className="card-body player">
                 <div className="article">
