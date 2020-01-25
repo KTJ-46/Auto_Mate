@@ -5,9 +5,13 @@ function Nav() {
   function LogOut() {
     function handleClick(e) {
       e.preventDefault();
-      console.log('The button was clicked.');
-    }
-  },
+      
+      localStorage.setItem("token"," ");
+      window.location = "/Login"; 
+      console.log('The button was clicked.');
+      };
+    },
+  
  
     <nav className="navbar bg-info">
       <h2>
@@ -17,16 +21,15 @@ function Nav() {
  
  
       <ButtonToolbar>
-  <button  onClick={LogOut}  variant ="primary">Log Out</button>
+  <button  handleClick={LogOut}  variant ="primary">Log Out</button>
       </ButtonToolbar>
     
       
       </nav>
      );
 
-//   <button onClick={activateLasers}>
-//   Activate Lasers
-// </button>
+
+
 }
 
 export default Nav;
