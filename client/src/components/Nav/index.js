@@ -2,10 +2,10 @@ import React from "react";
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 function Nav() {
   return (
-  function ActionLink() {
+  function LogOut() {
     function handleClick(e) {
       e.preventDefault();
-      console.log('The link was clicked.');
+      console.log('The button was clicked.');
     }
   },
  
@@ -17,7 +17,7 @@ function Nav() {
  
  
       <ButtonToolbar>
-  <button  onClick={handleClick}  variant ="primary">Log Out</button>
+  <button  onClick={LogOut}  variant ="primary">Log Out</button>
       </ButtonToolbar>
     
       
