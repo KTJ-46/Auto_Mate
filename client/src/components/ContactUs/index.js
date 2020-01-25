@@ -19,19 +19,20 @@ constructor(props){
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    const { user_name, user_email} = this.state
+    const { user_name, user_email} = this.state;
+    let result = this.props.diagnostics[0];
     let templateParams = {
-    
       to_name: user_name,
       to_email: user_email,
-      desc: this.props.diagnostics.desc,
-      repairHours: this.props.diagnostics.repairHours || 'tbd',
-      repairLaborRate: this.props.diagnostics.repairLaborRate,
-      repairPartCost: this.props.diagnostics.repairPartCost,
-      repairLaborCost: this.props.diagnostics. repairLaborCost,
-      repairMiscCost: this.props.diagnostics.repairMiscCost,
-      repairTotalCost: this.props.diagnostics.repairTotalCost,
+      desc: result.desc,
+      repairHours: result.repairHours || 'tbd',
+      repairLaborRate: result.repairLaborRate,
+      repairPartCost: result.repairPartCost,
+      repairLaborCost: result. repairLaborCost,
+      repairMiscCost: result.repairMiscCost,
+      repairTotalCost: result.repairTotalCost,
      }
+     console.log('template here', templateParams)
     emailjs.send('automate_gmail', 'automate_quote', templateParams, 'user_DoxoMt5Go2TzXNORV56Z5').then((result) => {
       console.log(result.text);
       }, (error) => {
@@ -43,7 +44,6 @@ constructor(props){
       user_email : ""})
   }
   render () { 
-    console.log('Contact', this.props.diagnostics)
   return (
     <form className="contact-form" onSubmit={this.handleSubmit}>
       <label style={{marginLeft: 10, marginRight: 10}}>Name:</label>
