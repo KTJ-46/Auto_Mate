@@ -5,20 +5,28 @@ import './style.css';
 
 function ContactUs() {
 
-  var templateParams = {
-    name: 'James',
-    diagnostics: 'Check this out!'
-};
+  handleSubmit(e) {
+    e.preventDefault()
+    const { name, email, subject, message } = this.state
+    let templateParams = {
+      from_name: email,
+      to_name: 'recipient@email.com',
+      subject: subject,
+      message_html: message,
+     }
+     emailjs.send(
+      'mailgun',
+      'template_zexqcCpj',
+       templateParams,
+      'your_user_key'
+     )
+     this.resetForm()
+ }
 
-  function sendEmail(e) {
-    e.preventDefault();
-  console.log(templateParams);
-    emailjs.sendForm('contact_service', 'contact_form', e.target, 'user_DoxoMt5Go2TzXNORV56Z5',templateParams )
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+      emailjs.send('automate_gmail', 'automate_quote', templateParams, 'user_DoxoMt5Go2TzXNORV56Z5')
+      
+      this.resetForm()
+
   }
 
   return (
@@ -33,7 +41,7 @@ function ContactUs() {
       <label style={{marginLeft: 10, marginRight: 10}}>Message:</label>
       <textarea style={{width: 430}} rows="5" name="message" />
       </div>
-      <input style={{width: 430, marginLeft: 65}} class="btn btn-info font-weight-bold" type="submit" value="Send" />
+      <input style={{width: 430, marginLeft: 65}} class="btn btn-info font-weight-bold" type="submit" value="Send Quote" />
     </form>
   );
 }
