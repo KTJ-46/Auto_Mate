@@ -80,13 +80,7 @@ class MaintenanceInfo extends Component {
               <a href="/home" class="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
               <br></br>
               <br></br>  
-              <a href="/search" class="btn btn-secondary btn-block font-weight-bold" role="button">Search</a>
-              <br></br>
-              <br></br>
               <a href="/repair" class="btn btn-secondary btn-block font-weight-bold active" role="button">Repair/Diagnostic</a>
-              <br></br>
-              <br></br>
-              <a href="/tsb" class="btn btn-secondary btn-block font-weight-bold" role="button">TSB</a>
               <br></br>
               <br></br>
               <a href="/logbook" class="btn btn-secondary btn-block font-weight-bold" role="button">Logbook</a>
@@ -98,7 +92,7 @@ class MaintenanceInfo extends Component {
               <Col size="md-10">
 
                 <Jumbotron>
-                  <h1 style={{marginTop: 50}} className="text-light">Get you Car's scheduled maintenance</h1>
+                  <h1 style={{marginTop: 50}} className="text-light">Get your Car's Scheduled Maintenance</h1>
                 </Jumbotron>                   
               <Col size="md-6">
                   <br></br>
