@@ -1,16 +1,19 @@
 import React from "react";
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 function Nav() {
-  return (
-  function LogOut() {
-    function handleClick(e) {
-      e.preventDefault();
-      
-      localStorage.setItem("token"," ");
-      window.location = "/Login"; 
+
+
+  function handleClick(e) {
+    e.preventDefault();
+    
+    localStorage.setItem("token","");
+      window.location = "/"; 
       console.log('The button was clicked.');
-      };
-    },
+    }
+  
+  return (
+  
+    
   
  
     <nav className="navbar bg-info">
@@ -20,9 +23,9 @@ function Nav() {
    
  
  
-      <ButtonToolbar>
-  <button  handleClick={LogOut}  variant ="primary">Log Out</button>
-      </ButtonToolbar>
+      {localStorage.getItem("token") && localStorage.getItem("token")!=="" &&<ButtonToolbar>
+  <button  onClick={handleClick}  variant ="primary">Log Out</button>
+      </ButtonToolbar>}
     
       
       </nav>

@@ -70,7 +70,7 @@ class Logbook extends Component {
             <div className="sidebarMenu">
               <br></br>
               <br></br> 
-              <a href="/" className="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
+              <a href="/home" className="btn btn-secondary btn-block font-weight-bold" role="button">Home</a>
               <br></br>
               <br></br>
               <a href="/repair" className="btn btn-secondary btn-block font-weight-bold" role="button">Repair/Diagnostic</a>
