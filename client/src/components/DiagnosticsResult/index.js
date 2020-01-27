@@ -15,16 +15,16 @@ const DiagnosticsResult = props => {
             <div className="card">
                 <div className="card-body player">
                     <div className="article">
-                        <h3>Search Results</h3>
+                        <h3>Diagnosis Results</h3>
                         {props.diagnostics.map(diagnostic => {
                             return (
                                 <li className="search-list list-group-item" key={diagnostic.id}>
                                     <Row className="SearchResult row" id={diagnostic.desc + "Card"}>
                                         {/* col-3 show image of the book */}
-                                        <Col size="2" className="bookImage">
+                                        {/* <Col size="2" className="bookImage">
                                             <img src={diagnostic.repairTSB}  />
                                         </Col>
-                                        <Col size="1" className="emptyCol"/>
+                                        <Col size="1" className="emptyCol"/> */}
                                         {/* col-9 show information of the book */}
                                         <Col size="9" className="Diagnosis">
                                             

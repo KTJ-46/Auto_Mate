@@ -48,7 +48,7 @@ class MaintenanceInfo extends Component {
                               key: index,
                               id: index,
                               desc: result.desc,
-                              dueMileage: result.due_mileage,
+                              dueMileage: result.due_mileage + " miles",
                               maintenanceTotalCost: result.repair.total_cost
                             
                           }

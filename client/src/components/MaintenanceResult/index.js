@@ -1,5 +1,5 @@
 import React from "react";
-//import "./style.css";
+import "./style.css";
 import {Row, Col} from "../Grid"
 
 const MaintenanceResult = props => {
@@ -7,7 +7,7 @@ const MaintenanceResult = props => {
         <div className="card">
             <div className="card-body player">
                 <div className="article">
-                    <h3>Maintenance Results</h3>
+                    <h3>Suggested Maintenance:</h3>
                 </div>
             </div>
         </div>
@@ -15,41 +15,30 @@ const MaintenanceResult = props => {
             <div className="card">
                 <div className="card-body player">
                     <div className="article">
-                        <h3>Scheduled Maintenance Results</h3>
+                        <h3>Suggested Maintenance</h3>
                         {props.maintenance.map(maintain => {
                             return (
+                               
+                                <ol>
                                 <li className="search-list list-group-item" key={maintain.id}>
-                                    <Row className="SearchResult row" id={maintain.desc + "Card"}>
-                                       
-                                        <Col size="1" className="emptyCol"/>
-                                        {/* col-9 show information of the book */}
-                                        <Col size="9" className="Diagnosis">
+                                    <Row className="MaintenanceResult row" id={maintain.desc + "Card"}>
+                                    
+                                        <Col size="9" className="Maintenance">
                                             
                                             <Row>
-                                                <h3 className="diagDesc"> Maintenance Desc: {maintain.desc}</h3>
+                                                <h3 className="maintainDesc"> Maintenance Needed: {maintain.desc}</h3>
                                             </Row>
                                             <Row>
-                                                <h3 className="diagRepairHour"> Maintenance at mileage: {maintain.dueMileage}</h3>
+                                                <h3 className="maintainMileage"> Maintenance at mileage: {maintain.dueMileage}</h3>
                                             </Row>
                                            
                                             <Row>
-                                                <h4 className="diagLaborRate">Total Maintenance Cost: ${maintain.maintenanceTotalCost}</h4>
+                                                <h4 className="maintainTotalCost">Total Maintenance Cost: ${maintain.maintenanceTotalCost}</h4>
                                             </Row>
-                                            
                                         </Col>
                                     </Row>
-                                    <br></br>
-                                    {/* <Row className="buttonDiv ">
-                                        <button className="saveBook btn btn-primary" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
-                                            Save Book
-                                        </button>
-                                        <a href={book.link} target="_blank">
-                                            <button className="viewBook btn btn-success">
-                                                View Book
-                                        </button>
-                                        </a>
-                                    </Row> */}
                                 </li>
+                                </ol>
                             );
                         })}
                     </div>
