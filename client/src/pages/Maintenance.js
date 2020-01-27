@@ -5,6 +5,7 @@ import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import Maintenance from "../components/Maintenance";
 import MaintenanceResult from "../components/MaintenanceResult";
+import ContactUs from "../components/ContactUs";
 
 class MaintenanceInfo extends Component {
   constructor() {
@@ -28,7 +29,7 @@ class MaintenanceInfo extends Component {
           event.preventDefault();
           console.log(this.state.vin)
           // once it clicks it connects to the google book api with the search value
-          API.getCarMD(this.state.vin, this.state.mileage, this.state.dtc)
+          API.getCarMD2(this.state.vin, this.state.mileage)
               .then(res => {
                   console.log('RAW RES=> ', res)
                   // if (!Array.isArray(res)) {
@@ -47,20 +48,14 @@ class MaintenanceInfo extends Component {
                               key: index,
                               id: index,
                               desc: result.desc,
-                              repairHours: result.repair.hours,
-                              repairLaborRate: result.repair.labor_rate_per_hour,
-                              repairPartCost: result.repair.part_cost,
-                              repairLaborCost: result.repair.labor_cost,
-                              repairMiscCost: result.repair.misc_cost,
-                              repairTotalCost: result.repair.total_cost,
-                              repairTSB: result.tsb.file_url
-
+                              dueMileage: result.due_mileage,
+                              maintenanceTotalCost: result.repair.total_cost
                             
                           }
                           return result;
                       })
                       // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
-                this.setState({ maintenance: results, error: "" }, () => console.log('AFTER SETTING STATE',this.state.diagnosis))
+                this.setState({ maintenance: results, error: "" }, () => console.log('AFTER SETTING STATE',this.state.maintenance))
               })
               .catch(err => this.setState({ error: err }));
       }

@@ -16,37 +16,26 @@ const MaintenanceResult = props => {
                 <div className="card-body player">
                     <div className="article">
                         <h3>Scheduled Maintenance Results</h3>
-                        {props.maintenance.map(diagnostic => {
+                        {props.maintenance.map(maintain => {
                             return (
-                                <li className="search-list list-group-item" key={diagnostic.id}>
-                                    <Row className="SearchResult row" id={diagnostic.desc + "Card"}>
+                                <li className="search-list list-group-item" key={maintain.id}>
+                                    <Row className="SearchResult row" id={maintain.desc + "Card"}>
                                        
                                         <Col size="1" className="emptyCol"/>
                                         {/* col-9 show information of the book */}
                                         <Col size="9" className="Diagnosis">
                                             
                                             <Row>
-                                                <h3 className="diagDesc"> Diagnosis: {diagnostic.desc}</h3>
+                                                <h3 className="diagDesc"> Maintenance Desc: {maintain.desc}</h3>
                                             </Row>
                                             <Row>
-                                                <h3 className="diagRepairHour"> Repair Hours needed for the job: {diagnostic.repairHours}</h3>
+                                                <h3 className="diagRepairHour"> Maintenance at mileage: {maintain.dueMileage}</h3>
                                             </Row>
                                            
                                             <Row>
-                                                <h4 className="diagLaborRate">Hourly Labor Rate: ${diagnostic.repairLaborRate}</h4>
+                                                <h4 className="diagLaborRate">Total Maintenance Cost: ${maintain.maintenanceTotalCost}</h4>
                                             </Row>
-                                            <Row>
-                                                <h3 className="diagPartsCost"> Cost of the parts: ${diagnostic.repairPartCost}</h3>
-                                            </Row>
-                                            <Row>
-                                                <p className="diagMiscCost">Miscellaneous/ Hazmat: ${diagnostic.repairMiscCost}</p>
-                                            </Row>
-                                            <Row>
-                                                <p className="diagTotalCost">Total Cost of the job: ${diagnostic.repairTotalCost}</p>
-                                            </Row>
-                                            <Row>
-                                                <p className="diagTSB">Technician Service Bulletin: {diagnostic.repairTSB}</p>
-                                            </Row>
+                                            
                                         </Col>
                                     </Row>
                                     <br></br>
