@@ -16,7 +16,7 @@ const MaintenanceResult = props => {
                 <div className="card-body player">
                     <div className="article">
                         <h3>Suggested Maintenance</h3>
-                        {props.maintenance.map(maintain => {
+                        {props.maintenance.map((maintain, k) => {
                             return (
                                
                                 <ol>
@@ -26,7 +26,7 @@ const MaintenanceResult = props => {
                                         <Col size="9" className="Maintenance">
                                             
                                             <Row>
-                                                <h3 className="maintainDesc"> Maintenance Needed: {maintain.desc}</h3>
+                                                <h3 className="maintainDesc">{k+1}.  Maintenance Needed: {maintain.desc}</h3>
                                             </Row>
                                             <Row>
                                                 <h3 className="maintainMileage"> Maintenance at mileage: {maintain.dueMileage}</h3>
