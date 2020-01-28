@@ -16,7 +16,7 @@ const DiagnosticsResult = props => {
                 <div className="card-body player">
                     <div className="article">
                         <h3>Diagnosis Results</h3>
-                        {props.diagnostics.map(diagnostic => {
+                        {props.diagnostics.map((diagnostic, k) => {
                             return (
                                 <li className="search-list list-group-item" key={diagnostic.id}>
                                     <Row className="SearchResult row" id={diagnostic.desc + "Card"}>
@@ -29,7 +29,7 @@ const DiagnosticsResult = props => {
                                         <Col size="9" className="Diagnosis">
                                             
                                             <Row>
-                                                <h3 style = {{ fontFamily: "calibri italic", fontStyle: "italic", }} className="diagDesc"> Diagnosis: {diagnostic.desc}</h3>
+                                                <h3 style = {{ fontFamily: "calibri italic", fontStyle: "italic", }} className="diagDesc">{k+1}. Diagnosis: {diagnostic.desc}</h3>
                                             </Row>
                                             <Row>
                                                 <h4 className="diagRepairHour"> Repair Hours needed for the job: {diagnostic.repairHours}</h4>

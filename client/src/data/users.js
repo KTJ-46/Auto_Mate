@@ -1,6 +1,6 @@
 const users = [
-    {email: 'admin@email.com', password: '123456'},
-    {email: 'k@k.com', password: '123'},
+    {email: 'kvadake@automate.com', password: 'Advance1'},
+    {email: 'mconwell@automate.com', password: '123456'},
 
 
 ]
