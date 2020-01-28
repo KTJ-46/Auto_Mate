@@ -26,7 +26,7 @@ const MaintenanceResult = props => {
                                         <Col size="9" className="Maintenance">
                                             
                                             <Row>
-                                                <h3 className="maintainDesc">{k+1}.  Maintenance Needed: {maintain.desc}</h3>
+                                                <h3 style = {{ fontFamily: "calibri italic", fontStyle: "italic", }} className="maintainDesc">{k+1}.  Maintenance Needed: {maintain.desc}</h3>
                                             </Row>
                                             <Row>
                                                 <h4 className="maintainMileage"> Maintenance at mileage: {maintain.dueMileage}</h4>
