@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import emailjs from "emailjs-com";
 import './style.css';
-
+require("dotenv").config();
+console.log(process.env.REACT_APP_API_KEY_EMAILJS);
 
 class ContactUs extends Component {
 
@@ -11,6 +12,7 @@ constructor(props){
     user_name : "",
     user_email : "",
   }
+  
   }
 
   handleChange = (e) => {
@@ -28,12 +30,15 @@ constructor(props){
       repairHours: result.repairHours || 'tbd',
       repairLaborRate: result.repairLaborRate,
       repairPartCost: result.repairPartCost,
-      repairLaborCost: result. repairLaborCost,
+      repairLaborCost: result.repairLaborCost,
       repairMiscCost: result.repairMiscCost,
       repairTotalCost: result.repairTotalCost,
      }
-     console.log('template here', templateParams)
-    emailjs.send('automate_gmail', 'automate_quote', templateParams, 'user_DoxoMt5Go2TzXNORV56Z5').then((result) => {
+     console.log('template here', templateParams);
+     console.log(process.env.REACT_APP_API_KEY_EMAILJS);
+
+    emailjs.send('automate_gmail', 'automate_quote', templateParams, process.env.REACT_APP_API_KEY_EMAILJS).then((result) => {
+
       console.log(result.text);
       }, (error) => {
       console.log(error.text);
