@@ -97,10 +97,9 @@ onChange = e => {
             <br></br>
             <br></br>
             <br></br>
-            <h3 style={{padding: 100, height: 100, backgroundColor: "#343a40", fontFamily: "calibri italic"}} className="Text text-light text-center border border-light">To avail services of Auto-Mate Inc. please contact us at following-</h3>
-            <br></br>
-            <br></br>
-            <h3 style={{padding: 150, height: 240, backgroundColor: "#343a40", fontFamily: "calibri italic"}} className="Text text-light text-center border border-light">Contact Help-Desk: +1 931-252-5501
+            <h3 style={{padding: 20, height: 100, backgroundColor: "#343a40", fontFamily: "calibri italic"}} className="Text text-light text-center border border-light">To avail services of Auto-Mate Inc. please contact us at following-</h3>
+
+            <h3 style={{padding: 30, height: 130, backgroundColor: "#343a40", fontFamily: "calibri italic"}} className="Text text-light text-center border border-light">Contact Help-Desk: +1 931-252-5501
               Email: automate.quote@gmail.com.
             </h3>
 
