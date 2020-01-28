@@ -48,13 +48,13 @@ class RepairDiagnostic extends Component {
                               key: index,
                               id: index,
                               desc: result.desc,
-                              repairHours: result.repair.hours,
-                              repairLaborRate: result.repair.labor_rate_per_hour,
+                              repairHours: result.repair.hours + " hours",
+                              repairLaborRate: result.repair.labor_rate_per_hour + "/hr",
                               repairPartCost: result.repair.part_cost,
                               repairLaborCost: result.repair.labor_cost,
                               repairMiscCost: result.repair.misc_cost,
                               repairTotalCost: result.repair.total_cost,
-                              repairTSB: result.tsb.file_url
+                              repairTSB: result.tsb.file_url || "TSB not available"
 
                             
                           }
