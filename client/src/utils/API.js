@@ -6,7 +6,7 @@ export default {
 
   // Get repair/ diagnosis from  Car MD API
   getCarMD: function(vin, mileage, dtc) {
-    return axios.get("http://api.carmd.com/v3.0/repair?vin=" + vin + "&mileage=" + mileage + "&dtc=" + dtc,
+    return axios.get("https://api.carmd.com/v3.0/repair?vin=" + vin + "&mileage=" + mileage + "&dtc=" + dtc,
       {headers: {
         "content-type":"application/json",
         "authorization": process.env.REACT_APP_API_KEY_CARMD_AUTH,
@@ -18,7 +18,7 @@ export default {
   
   //Get maintenance info. from Car MD API
   getCarMD2: function(vin, mileage) {
-    return axios.get("http://api.carmd.com/v3.0/maint?vin=" + vin + "&mileage=" + mileage,
+    return axios.get("https://api.carmd.com/v3.0/maint?vin=" + vin + "&mileage=" + mileage,
       {headers: {
         "content-type":"application/json",
         "authorization": process.env.REACT_APP_API_KEY_CARMD_AUTH,
