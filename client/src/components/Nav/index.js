@@ -24,7 +24,7 @@ function Nav() {
  
  
       {localStorage.getItem("token") && localStorage.getItem("token")!=="" &&<ButtonToolbar>
-  <button  onClick={handleClick}  variant ="primary">Log Out</button>
+  <button  onClick={handleClick}  className="btn btn-info btn-block font-weight-bold" variant ="primary">Log Out</button>
       </ButtonToolbar>}
     
       
