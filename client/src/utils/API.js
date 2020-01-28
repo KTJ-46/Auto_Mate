@@ -1,4 +1,5 @@
 import axios from "axios";
+require("dotenv").config();
 
 
 export default {
@@ -8,8 +9,8 @@ export default {
     return axios.get("http://api.carmd.com/v3.0/repair?vin=" + vin + "&mileage=" + mileage + "&dtc=" + dtc,
       {headers: {
         "content-type":"application/json",
-        "authorization":"Basic MTMwMWM0OTQtZGIwNS00NTBmLWI1ZTQtODA3OWU1NDY4NzM1	",
-        "partner-token":"4f8eec62e091477aa343d8eb26869044"
+        "authorization": process.env.REACT_APP_API_KEY_CARMD_AUTH,
+        "partner-token": process.env.REACT_APP_API_KEY_CARMD_TOKEN
         }
       }
     )
@@ -20,8 +21,8 @@ export default {
     return axios.get("http://api.carmd.com/v3.0/maint?vin=" + vin + "&mileage=" + mileage,
       {headers: {
         "content-type":"application/json",
-        "authorization":"Basic MTMwMWM0OTQtZGIwNS00NTBmLWI1ZTQtODA3OWU1NDY4NzM1	",
-        "partner-token":"4f8eec62e091477aa343d8eb26869044"
+        "authorization": process.env.REACT_APP_API_KEY_CARMD_AUTH,
+        "partner-token": process.env.REACT_APP_API_KEY_CARMD_TOKEN
         }
       }
     )

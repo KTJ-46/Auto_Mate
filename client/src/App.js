@@ -9,7 +9,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
-
+require("dotenv").config();
 
 function App() {
   return (
