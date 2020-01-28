@@ -17,7 +17,7 @@ function Nav() {
   
  
     <nav className="navbar bg-info">
-      <h2 >
+      <h2 style = {{ fontFamily: "calibri italic", fontStyle: "italic", }}>
         Auto-Mate
       </h2>
    
