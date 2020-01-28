@@ -29,26 +29,26 @@ const DiagnosticsResult = props => {
                                         <Col size="9" className="Diagnosis">
                                             
                                             <Row>
-                                                <h3 className="diagDesc"> Diagnosis: {diagnostic.desc}</h3>
+                                                <h3 style = {{ fontFamily: "calibri italic", fontStyle: "italic", }} className="diagDesc"> Diagnosis: {diagnostic.desc}</h3>
                                             </Row>
                                             <Row>
-                                                <h3 className="diagRepairHour"> Repair Hours needed for the job: {diagnostic.repairHours}</h3>
+                                                <h4 className="diagRepairHour"> Repair Hours needed for the job: {diagnostic.repairHours}</h4>
                                             </Row>
                                            
                                             <Row>
                                                 <h4 className="diagLaborRate">Hourly Labor Rate: ${diagnostic.repairLaborRate}</h4>
                                             </Row>
                                             <Row>
-                                                <h3 className="diagPartsCost"> Cost of the parts: ${diagnostic.repairPartCost}</h3>
+                                                <h4 className="diagPartsCost"> Cost of the parts: ${diagnostic.repairPartCost}</h4>
                                             </Row>
                                             <Row>
-                                                <p className="diagMiscCost">Miscellaneous/ Hazmat: ${diagnostic.repairMiscCost}</p>
+                                                <h4 className="diagMiscCost">Miscellaneous/ Hazmat: ${diagnostic.repairMiscCost}</h4>
                                             </Row>
                                             <Row>
-                                                <p className="diagTotalCost">Total Cost of the job: ${diagnostic.repairTotalCost}</p>
+                                                <h4 className="diagTotalCost">Total Cost of the job: ${diagnostic.repairTotalCost}</h4>
                                             </Row>
                                             <Row>
-                                                <p className="diagTSB">Technician Service Bulletin: {diagnostic.repairTSB}</p>
+                                                <h4 className="diagTSB">Technician Service Bulletin: {diagnostic.repairTSB}</h4>
                                             </Row>
                                         </Col>
                                     </Row>
