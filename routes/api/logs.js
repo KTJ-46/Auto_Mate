@@ -12,5 +12,5 @@ router
   .get(logsController.findById)
   .put(logsController.update)
   .delete(logsController.remove);
-
+  
 module.exports = router;

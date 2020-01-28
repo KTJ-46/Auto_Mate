@@ -37,7 +37,7 @@ onChange = e => {
     return (
       <Container fluid>
         <Row>
-        <Col size="md-6 mx-auto">
+        <Col size="md-6">
         <Form onSubmit={this.handleSubmit}>
             <br></br>
             <br></br>
@@ -71,6 +71,12 @@ onChange = e => {
             <br></br>
             <br></br>
             <br></br>
+        </Col>
+        <Col size="md-6">
+            <br></br>
+            <br></br>
+            <br></br>
+            <h3 style={{padding: 20, height: 240}} className="Text text-light text-center border border-light">Hello</h3>
         </Col>
         </Row>
       </Container>
