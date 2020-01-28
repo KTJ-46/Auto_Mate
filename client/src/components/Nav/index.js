@@ -17,7 +17,7 @@ function Nav() {
   
  
     <nav className="navbar bg-info">
-      <h2>
+      <h2 >
         Auto-Mate
       </h2>
    
