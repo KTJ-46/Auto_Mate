@@ -27,8 +27,8 @@ onChange = e => {
     if (exists) {
       localStorage.setItem("token","isLoggedIn");
       window.location = "/Home"; 
-      return false;
         }
+      else {alert("Please check your Login Credentials & try again!")}
 
 
     };
